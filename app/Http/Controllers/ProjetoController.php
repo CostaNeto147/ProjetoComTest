@@ -49,8 +49,8 @@ class ProjetoController extends Controller
 
 
 
-                Projeto::create($request->validated());
-                    return redirect('/projetos');
+                $projeto = Projeto::create($request->validated());
+                return redirect()->route('projetos',[$projeto->id]);
                 //return response('Ok', Response::HTTP_CREATED);
             }
         }

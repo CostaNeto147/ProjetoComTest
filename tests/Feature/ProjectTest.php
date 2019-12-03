@@ -40,7 +40,13 @@ class ProjectTest extends TestCase
             'data' => '11-11-2019'
         ];
 
-        $response = $this->post('/projetos', $data_projeto); // envio
+        // $response = $this->call('GET', '/projetos/create', $parameters
+
+        $response = $this->call('GET', '/projetos/create')
+             ->type('Taylor', 'name'); // envio
+
+
+
         $response->assertStatus(Response::HTTP_CREATED); // validacao do envio
         $this->assertDatabaseHas('projetos', $data_projeto); // validacao base
 

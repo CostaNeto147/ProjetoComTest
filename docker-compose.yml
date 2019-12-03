@@ -1,0 +1,34 @@
+version: "3.6"
+
+services:
+  web:
+    image: ambientum/php:7.2-nginx
+    container_name: "webapp"
+    volumes:
+      - .:/var/www/app
+    environment:
+      - FRAMEWORK=laravel
+      - XDEBUG_ENABLED=false
+      - OPCACHE_MODE=normal
+      - PHP_MEMORY_LIMIT=256M
+      - LANG=pt_BR.UTF-8
+      - TZ=America/Fortaleza
+    ports:
+      - target: 8080
+        published: 3333
+      - target: 8083
+        published: 443
+    links:
+      - postgres
+
+  postgres:
+    image: postgres:11.2
+    container_name: "db"
+    environment:
+      - POSTGRES_USER=todo
+      - POSTGRES_PASSWORD=todo123
+      - POSTGRES_DB=todo
+      - TZ=America/Fortaleza
+    ports:
+     - target: 5432
+       published: 5432

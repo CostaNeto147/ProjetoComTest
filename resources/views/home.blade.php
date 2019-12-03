@@ -17,6 +17,8 @@
                     You are logged in!
                 </div>
             </div>
+
+            <a href="/projetos">Lista de projetos</a>
         </div>
     </div>
 </div>

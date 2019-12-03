@@ -27,7 +27,7 @@ use App\Projeto;
  */
 
 /**
- * Template Estoria de Usuario
+ * Template Estrefasoria de Usuario
  * Eu, enquanto PAPEL, precisa de FEATURE para realização de uma TAREFA
  */
 
